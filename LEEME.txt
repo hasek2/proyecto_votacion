@@ -1,2 +1,28 @@
-Paso a paso:
+Pasos para configurar el proyecto:
+1. Configuración de XAMPP:
+Inicia XAMPP:
 
+Abre XAMPP desde el menú de inicio o la ubicación donde lo hayas instalado.
+Inicia los servicios de Apache y MySQL haciendo clic en los botones "Start" junto a cada uno.
+Accede a phpMyAdmin:
+
+En tu navegador web, visita http://localhost/phpmyadmin.
+Inicia sesión con el usuario por defecto (generalmente root) y deja la contraseña en blanco si no la has cambiado.
+2. Configuración de la Base de Datos:
+Crea la Base de Datos:
+
+En phpMyAdmin, crea una nueva base de datos con el nombre que desees para tu proyecto. Deben llamarla votaciones.
+Selecciona la nueva base de datos en la barra lateral izquierda.
+Importa el Script SQL:
+
+Con el archivo .txt(scrip base de datos) en comandos SQL:
+
+Abre el archivo .txt en un editor de texto y copia los comandos SQL.
+En phpMyAdmin, selecciona la base de datos y usa la pestaña "SQL" para pegar y ejecutar los comandos SQL uno por uno.
+3. Configuración del Proyecto PHP:
+Coloca tus archivos:
+
+Crea una carpeta para tu proyecto dentro del directorio htdocs de XAMPP. Por ejemplo, C:\xampp\htdocs\mi_proyecto.
+Coloca todos los archivos PHP, HTML, CSS, JavaScript y otros archivos necesarios en esta carpeta.
+
+!!Contar que no todas las regiones tienen sus comunas ya que el ejemplo son las primeras 4!!
