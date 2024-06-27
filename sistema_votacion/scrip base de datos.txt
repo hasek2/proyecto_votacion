@@ -1,0 +1,100 @@
+CREATE DATABASE votaciones;
+
+USE votaciones;
+
+CREATE TABLE regiones (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE comunas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    region_id INT,
+    FOREIGN KEY (region_id) REFERENCES regiones(id)
+);
+
+CREATE TABLE candidatos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE votos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_apellido VARCHAR(100) NOT NULL,
+    alias VARCHAR(50) NOT NULL,
+    rut VARCHAR(20) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL,
+    region_id INT,
+    comuna_id INT,
+    candidato_id INT,
+    medio_entero VARCHAR(100) NOT NULL,
+    FOREIGN KEY (region_id) REFERENCES regiones(id),
+    FOREIGN KEY (comuna_id) REFERENCES comunas(id),
+    FOREIGN KEY (candidato_id) REFERENCES candidatos(id)
+);
+
+-- Insertar datos de regiones
+INSERT INTO regiones (nombre) VALUES
+('Región de Arica y Parinacota'),
+('Región de Tarapacá'),
+('Región de Antofagasta'),
+('Región de Atacama'),
+('Región de Coquimbo'),
+('Región de Valparaíso'),
+('Región Metropolitana de Santiago'),
+('Región del Libertador General Bernardo O\'Higgins'),
+('Región del Maule'),
+('Región de Ñuble'),
+('Región del Biobío'),
+('Región de La Araucanía'),
+('Región de Los Ríos'),
+('Región de Los Lagos'),
+('Región de Aysén del General Carlos Ibáñez del Campo'),
+('Región de Magallanes y de la Antártica Chilena');
+
+-- Insertar datos de comunas
+INSERT INTO comunas (nombre, region_id) VALUES
+('Arica', 1),
+('Camarones', 1),
+('Putre', 1),
+('General Lagos', 1),
+('Iquique', 2),
+('Alto Hospicio', 2),
+('Pozo Almonte', 2),
+('Camiña', 2),
+('Colchane', 2),
+('Huara', 2),
+('Pica', 2),
+('Antofagasta', 3),
+('Mejillones', 3),
+('Sierra Gorda', 3),
+('Taltal', 3),
+('Calama', 3),
+('Ollagüe', 3),
+('San Pedro de Atacama', 3),
+('Tocopilla', 3),
+('María Elena', 3),
+('Copiapó', 4),
+('Caldera', 4),
+('Tierra Amarilla', 4),
+('Chañaral', 4),
+('Diego de Almagro', 4),
+('Vallenar', 4),
+('Alto del Carmen', 4),
+('Freirina', 4),
+('Huasco', 4),
+-- (agregar más comunas según sea necesario, solo algunas de ejemplo)
+('Santiago', 7),
+('Providencia', 7),
+('Las Condes', 7),
+('La Florida', 7),
+('Maipú', 7);
+
+-- Insertar datos de candidatos
+INSERT INTO candidatos (nombre) VALUES
+('Candidato 1'),
+('Candidato 2'),
+('Candidato 3'),
+('Candidato 4'),
+('Candidato 5');
