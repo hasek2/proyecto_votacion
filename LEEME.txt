@@ -26,3 +26,6 @@ Crea una carpeta para tu proyecto dentro del directorio htdocs de XAMPP. Por eje
 Coloca todos los archivos PHP, HTML, CSS, JavaScript y otros archivos necesarios en esta carpeta.
 
 !!Contar que no todas las regiones tienen sus comunas ya que el ejemplo son las primeras 4!!
+
+
+versiones: PHP PHP/8.2.12, XAMP BASE DE DATOS: 3.3.0
